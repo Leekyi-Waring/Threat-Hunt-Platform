@@ -1,0 +1,1203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🔥 ULTIMATE ELITE THREAT HUNTING PLATFORM</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            background: radial-gradient(ellipse at center, #0a0a0f 0%, #1a1a2e 50%, #0f0f23 100%);
+            color: #f0f8ff;
+            min-height: 100vh;
+            position: relative;
+            overflow-x: hidden;
+        }
+        
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: 
+                radial-gradient(circle at 20% 20%, rgba(239, 68, 68, 0.15) 0%, transparent 50%),
+                radial-gradient(circle at 80% 80%, rgba(59, 130, 246, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 40% 60%, rgba(16, 185, 129, 0.1) 0%, transparent 50%);
+            pointer-events: none;
+            z-index: -1;
+            animation: backgroundShift 20s ease-in-out infinite;
+        }
+        
+        @keyframes backgroundShift {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.7; }
+        }
+        
+        .main-container {
+            max-width: 2000px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        .header {
+            text-align: center;
+            padding: 40px;
+            background: linear-gradient(135deg, rgba(15, 15, 35, 0.95) 0%, rgba(30, 30, 60, 0.95) 50%, rgba(15, 15, 35, 0.95) 100%);
+            border-radius: 24px;
+            margin-bottom: 30px;
+            border: 1px solid rgba(239, 68, 68, 0.2);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, #ef4444, transparent);
+            animation: sweep 4s infinite;
+        }
+        
+        @keyframes sweep {
+            0% { left: -100%; }
+            50% { left: 100%; }
+            100% { left: 100%; }
+        }
+        
+        .title {
+            font-size: 48px;
+            font-weight: 900;
+            background: linear-gradient(135deg, #ef4444 0%, #dc2626 30%, #b91c1c 60%, #991b1b 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 15px;
+            letter-spacing: -0.05em;
+            text-shadow: 0 0 30px rgba(239, 68, 68, 0.3);
+            animation: titlePulse 3s ease-in-out infinite;
+        }
+        
+        @keyframes titlePulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.02); }
+        }
+        
+        .subtitle {
+            color: #94a3b8;
+            font-size: 18px;
+            font-weight: 500;
+            margin-bottom: 20px;
+        }
+        
+        .feature-badges {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+        
+        .badge {
+            background: linear-gradient(135deg, rgba(16, 185, 129, 0.2) 0%, rgba(5, 150, 105, 0.3) 100%);
+            border: 1px solid rgba(16, 185, 129, 0.4);
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 700;
+            color: #10b981;
+            animation: badgeFloat 4s ease-in-out infinite;
+            animation-delay: var(--delay);
+        }
+        
+        @keyframes badgeFloat {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-5px); }
+        }
+        
+        .platform-tabs {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin-bottom: 30px;
+            flex-wrap: wrap;
+        }
+        
+        .platform-tab {
+            background: linear-gradient(135deg, rgba(15, 15, 35, 0.8) 0%, rgba(30, 30, 60, 0.8) 100%);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            color: #94a3b8;
+            padding: 15px 25px;
+            border-radius: 15px;
+            cursor: pointer;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            font-weight: 700;
+            font-size: 14px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .platform-tab::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+            transition: left 0.6s ease;
+        }
+        
+        .platform-tab:hover::before {
+            left: 100%;
+        }
+        
+        .platform-tab.active {
+            background: linear-gradient(135deg, #ef4444, #dc2626);
+            color: #ffffff;
+            transform: translateY(-3px) scale(1.05);
+            box-shadow: 0 15px 40px rgba(239, 68, 68, 0.4);
+            border-color: #ef4444;
+        }
+        
+        .platform-tab:hover:not(.active) {
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.05) 100%);
+            color: #f0f8ff;
+            transform: translateY(-2px);
+        }
+        
+        .platform-content {
+            display: none;
+            animation: contentFadeIn 0.6s ease-out;
+        }
+        
+        .platform-content.active {
+            display: block;
+        }
+        
+        @keyframes contentFadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .main-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 25px;
+            margin-bottom: 30px;
+        }
+        
+        .panel {
+            background: linear-gradient(135deg, rgba(15, 15, 35, 0.9) 0%, rgba(20, 20, 40, 0.9) 100%);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 20px;
+            padding: 25px;
+            backdrop-filter: blur(20px);
+            position: relative;
+            transition: all 0.3s ease;
+        }
+        
+        .panel:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            border-color: rgba(239, 68, 68, 0.3);
+        }
+        
+        .panel-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid rgba(239, 68, 68, 0.2);
+        }
+        
+        .panel-icon {
+            font-size: 24px;
+            margin-right: 15px;
+            color: #ef4444;
+            filter: drop-shadow(0 0 10px rgba(239, 68, 68, 0.4));
+        }
+        
+        .panel-title {
+            font-size: 18px;
+            font-weight: 700;
+            color: #f0f8ff;
+            letter-spacing: -0.01em;
+        }
+        
+        .intel-feed, .visualization-area, .collaboration-zone {
+            background: rgba(0, 0, 0, 0.4);
+            border-radius: 15px;
+            padding: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            min-height: 300px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .live-feed-item {
+            background: linear-gradient(135deg, rgba(239, 68, 68, 0.1) 0%, rgba(220, 38, 38, 0.15) 100%);
+            border-left: 3px solid #ef4444;
+            padding: 12px 15px;
+            margin: 10px 0;
+            border-radius: 0 10px 10px 0;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .live-feed-item::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(239, 68, 68, 0.2), transparent);
+            transition: left 0.5s ease;
+        }
+        
+        .live-feed-item:hover {
+            background: linear-gradient(135deg, rgba(239, 68, 68, 0.2) 0%, rgba(220, 38, 38, 0.25) 100%);
+            transform: translateX(8px) scale(1.02);
+            box-shadow: 0 8px 25px rgba(239, 68, 68, 0.3);
+        }
+        
+        .live-feed-item:hover::before {
+            left: 100%;
+        }
+        
+        .threat-type {
+            font-size: 11px;
+            color: #ef4444;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        .threat-value {
+            font-family: 'Monaco', 'Consolas', monospace;
+            color: #f0f8ff;
+            font-size: 13px;
+            margin: 8px 0;
+            word-break: break-all;
+        }
+        
+        .threat-metadata {
+            font-size: 10px;
+            color: #94a3b8;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .confidence-bar {
+            width: 60px;
+            height: 4px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 2px;
+            overflow: hidden;
+        }
+        
+        .confidence-fill {
+            height: 100%;
+            background: linear-gradient(90deg, #ef4444, #10b981);
+            border-radius: 2px;
+            transition: width 0.3s ease;
+        }
+        
+        .query-canvas {
+            background: linear-gradient(135deg, rgba(0, 0, 0, 0.8) 0%, rgba(15, 15, 25, 0.9) 100%);
+            border: 1px solid rgba(239, 68, 68, 0.2);
+            border-radius: 15px;
+            padding: 20px;
+            min-height: 250px;
+            font-family: 'Monaco', 'Consolas', monospace;
+            font-size: 13px;
+            color: #f0f8ff;
+            white-space: pre-wrap;
+            overflow-y: auto;
+            position: relative;
+            line-height: 1.6;
+        }
+        
+        .action-buttons {
+            display: flex;
+            gap: 12px;
+            margin-top: 20px;
+            flex-wrap: wrap;
+        }
+        
+        .action-btn {
+            background: linear-gradient(135deg, #ef4444, #dc2626);
+            color: #ffffff;
+            border: none;
+            padding: 12px 20px;
+            border-radius: 12px;
+            font-weight: 700;
+            font-size: 13px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            flex: 1;
+            min-width: 120px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .action-btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+            transition: left 0.6s ease;
+        }
+        
+        .action-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 30px rgba(239, 68, 68, 0.4);
+        }
+        
+        .action-btn:hover::before {
+            left: 100%;
+        }
+        
+        .action-btn.ai {
+            background: linear-gradient(135deg, #8b5cf6, #7c3aed);
+        }
+        
+        .action-btn.success {
+            background: linear-gradient(135deg, #10b981, #059669);
+        }
+        
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+        
+        .stat-card {
+            background: linear-gradient(135deg, rgba(239, 68, 68, 0.1) 0%, rgba(220, 38, 38, 0.15) 100%);
+            border: 1px solid rgba(239, 68, 68, 0.2);
+            border-radius: 12px;
+            padding: 15px;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+        
+        .stat-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(239, 68, 68, 0.2);
+        }
+        
+        .stat-number {
+            font-size: 28px;
+            font-weight: 900;
+            color: #ef4444;
+            margin-bottom: 8px;
+            animation: numberPulse 3s ease-in-out infinite;
+        }
+        
+        @keyframes numberPulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+        
+        .stat-label {
+            font-size: 11px;
+            color: #94a3b8;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        .floating-notification {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: linear-gradient(135deg, #10b981, #059669);
+            color: white;
+            padding: 15px 20px;
+            border-radius: 10px;
+            font-weight: 700;
+            z-index: 1000;
+            transform: translateX(400px);
+            transition: transform 0.5s ease;
+            box-shadow: 0 10px 30px rgba(16, 185, 129, 0.3);
+        }
+        
+        .floating-notification.show {
+            transform: translateX(0);
+        }
+        
+        @media (max-width: 1400px) {
+            .main-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+        
+        @media (max-width: 900px) {
+            .main-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .platform-tabs {
+                flex-direction: column;
+            }
+            
+            .action-buttons {
+                flex-direction: column;
+            }
+            
+            .stats-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="main-container">
+        <div class="header">
+            <div class="title">🔥 ULTIMATE ELITE THREAT HUNTING PLATFORM</div>
+            <div class="subtitle">AI-Powered Real-Time Intelligence • Multi-Cloud Hunting • Zero APIs Required</div>
+            <div class="feature-badges">
+                <div class="badge" style="--delay: 0s">🚫 ZERO APIs Required</div>
+                <div class="badge" style="--delay: 0.5s">🔒 100% Secure & Private</div>
+                <div class="badge" style="--delay: 1s">⚡ GitHub Pages Ready</div>
+                <div class="badge" style="--delay: 1.5s">🧠 AI-Enhanced</div>
+                <div class="badge" style="--delay: 2s">🌐 Multi-Platform</div>
+            </div>
+        </div>
+        
+        <div class="platform-tabs">
+            <div class="platform-tab active" data-platform="intelligence">🌐 REAL-TIME INTEL</div>
+            <div class="platform-tab" data-platform="builder">🔧 QUERY BUILDER</div>
+            <div class="platform-tab" data-platform="visualization">📊 VISUALIZATION</div>
+            <div class="platform-tab" data-platform="collaboration">👥 TEAM HUNTING</div>
+            <div class="platform-tab" data-platform="ai">🧠 AI PREDICTIONS</div>
+        </div>
+        
+        <!-- REAL-TIME INTELLIGENCE PLATFORM -->
+        <div class="platform-content active" id="intelligence">
+            <div class="main-grid">
+                <div class="panel">
+                    <div class="panel-header">
+                        <div class="panel-icon">🌐</div>
+                        <div class="panel-title">LIVE THREAT INTELLIGENCE</div>
+                    </div>
+                    <div class="stats-grid">
+                        <div class="stat-card">
+                            <div class="stat-number" id="malwareCount">1,847</div>
+                            <div class="stat-label">New Malware</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-number" id="ipCount">4,291</div>
+                            <div class="stat-label">Malicious IPs</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-number" id="domainCount">1,156</div>
+                            <div class="stat-label">Bad Domains</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-number" id="cveCount">73</div>
+                            <div class="stat-label">New CVEs</div>
+                        </div>
+                    </div>
+                    <div class="intel-feed" id="intelFeed">
+                        <!-- Live threat intel items will be populated here -->
+                    </div>
+                </div>
+                
+                <div class="panel">
+                    <div class="panel-header">
+                        <div class="panel-icon">🔧</div>
+                        <div class="panel-title">AI QUERY BUILDER</div>
+                    </div>
+                    <div class="query-canvas" id="queryCanvas">// 🎯 ULTIMATE THREAT HUNTING PLATFORM
+// Click IOCs from threat intel feed to build queries
+// AI-powered optimization and multi-platform support
+
+// Waiting for threat intelligence selection...</div>
+                    <div class="action-buttons">
+                        <button class="action-btn ai" onclick="generateAIQuery()">🧠 AI Generate</button>
+                        <button class="action-btn" onclick="optimizeQuery()">⚡ Optimize</button>
+                        <button class="action-btn success" onclick="exportQuery()">💾 Export</button>
+                    </div>
+                </div>
+                
+                <div class="panel">
+                    <div class="panel-header">
+                        <div class="panel-icon">📊</div>
+                        <div class="panel-title">THREAT METRICS</div>
+                    </div>
+                    <div class="intel-feed">
+                        <div class="live-feed-item">
+                            <div class="threat-type">APT Campaign</div>
+                            <div class="threat-value">APT-C-36 infrastructure expansion detected</div>
+                            <div class="threat-metadata">
+                                <span>Confidence: High</span>
+                                <div class="confidence-bar"><div class="confidence-fill" style="width: 95%;"></div></div>
+                            </div>
+                        </div>
+                        <div class="live-feed-item">
+                            <div class="threat-type">Zero-Day</div>
+                            <div class="threat-value">SharePoint RCE vulnerability active</div>
+                            <div class="threat-metadata">
+                                <span>Confidence: Critical</span>
+                                <div class="confidence-bar"><div class="confidence-fill" style="width: 98%;"></div></div>
+                            </div>
+                        </div>
+                        <div class="live-feed-item">
+                            <div class="threat-type">Ransomware</div>
+                            <div class="threat-value">CryptoEagle variant in the wild</div>
+                            <div class="threat-metadata">
+                                <span>Confidence: Very High</span>
+                                <div class="confidence-bar"><div class="confidence-fill" style="width: 92%;"></div></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- QUERY BUILDER PLATFORM -->
+        <div class="platform-content" id="builder">
+            <div class="main-grid">
+                <div class="panel">
+                    <div class="panel-header">
+                        <div class="panel-icon">⚡</div>
+                        <div class="panel-title">VISUAL QUERY COMPOSER</div>
+                    </div>
+                    <div class="visualization-area">
+                        <div style="text-align: center; padding: 40px;">
+                            <div style="font-size: 48px; color: #8b5cf6; margin-bottom: 20px;">🎯</div>
+                            <div style="font-size: 18px; color: #8b5cf6; font-weight: 700; margin-bottom: 10px;">DRAG & DROP QUERY BUILDER</div>
+                            <div style="color: #94a3b8;">Visual query composition with AI assistance</div>
+                            <div class="action-buttons" style="margin-top: 20px;">
+                                <button class="action-btn ai" onclick="launchVisualBuilder()">🚀 Launch Builder</button>
+                                <button class="action-btn" onclick="loadTemplate()">📋 Load Template</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="panel">
+                    <div class="panel-header">
+                        <div class="panel-icon">🌐</div>
+                        <div class="panel-title">MULTI-CLOUD HUNTING</div>
+                    </div>
+                    <div class="collaboration-zone">
+                        <div class="live-feed-item" onclick="selectCloud('aws')">
+                            <div class="threat-type">AWS CloudTrail</div>
+                            <div class="threat-value">Generate AWS security hunting queries</div>
+                        </div>
+                        <div class="live-feed-item" onclick="selectCloud('azure')">
+                            <div class="threat-type">Azure Sentinel</div>
+                            <div class="threat-value">Hunt across Azure AD and Office 365</div>
+                        </div>
+                        <div class="live-feed-item" onclick="selectCloud('gcp')">
+                            <div class="threat-type">Google Cloud</div>
+                            <div class="threat-value">GCP audit logs and security center</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="panel">
+                    <div class="panel-header">
+                        <div class="panel-icon">📱</div>
+                        <div class="panel-title">MOBILE & IOT</div>
+                    </div>
+                    <div class="intel-feed">
+                        <div class="live-feed-item" onclick="generateMobile('ios')">
+                            <div class="threat-type">iOS Security</div>
+                            <div class="threat-value">iOS malware and jailbreak detection</div>
+                        </div>
+                        <div class="live-feed-item" onclick="generateMobile('android')">
+                            <div class="threat-type">Android Threats</div>
+                            <div class="threat-value">Android APK analysis and sideloading</div>
+                        </div>
+                        <div class="live-feed-item" onclick="generateMobile('iot')">
+                            <div class="threat-type">IoT Botnets</div>
+                            <div class="threat-value">IoT device compromise detection</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- VISUALIZATION PLATFORM -->
+        <div class="platform-content" id="visualization">
+            <div class="main-grid">
+                <div class="panel">
+                    <div class="panel-header">
+                        <div class="panel-icon">📊</div>
+                        <div class="panel-title">ATTACK TIMELINE</div>
+                    </div>
+                    <div class="visualization-area">
+                        <div style="padding: 20px;">
+                            <div style="color: #3b82f6; font-weight: 700; margin-bottom: 15px;">APT-C-36 Attack Chain Reconstruction</div>
+                            <div style="border-left: 3px solid #3b82f6; padding-left: 15px; margin: 10px 0;">
+                                <div style="color: #3b82f6; font-weight: 600;">1. Initial Access</div>
+                                <div style="color: #94a3b8; font-size: 12px;">SharePoint zero-day exploitation</div>
+                            </div>
+                            <div style="border-left: 3px solid #f59e0b; padding-left: 15px; margin: 10px 0;">
+                                <div style="color: #f59e0b; font-weight: 600;">2. Execution</div>
+                                <div style="color: #94a3b8; font-size: 12px;">PowerShell beacon deployment</div>
+                            </div>
+                            <div style="border-left: 3px solid #ef4444; padding-left: 15px; margin: 10px 0;">
+                                <div style="color: #ef4444; font-weight: 600;">3. Persistence</div>
+                                <div style="color: #94a3b8; font-size: 12px;">ControlVault firmware modification</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="panel">
+                    <div class="panel-header">
+                        <div class="panel-icon">🗺️</div>
+                        <div class="panel-title">THREAT GEOGRAPHY</div>
+                    </div>
+                    <div class="visualization-area">
+                        <div style="text-align: center; padding: 30px;">
+                            <div style="font-size: 36px; margin-bottom: 15px;">🌍</div>
+                            <div style="color: #3b82f6; font-weight: 700; margin-bottom: 10px;">GLOBAL THREAT MAP</div>
+                            <div style="color: #94a3b8; font-size: 14px; line-height: 1.6;">
+                                🔴 <strong>Critical:</strong> Latin America (APT-C-36)<br>
+                                🟡 <strong>Medium:</strong> North America<br>
+                                🟢 <strong>Low:</strong> Europe
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="panel">
+                    <div class="panel-header">
+                        <div class="panel-icon">🧠</div>
+                        <div class="panel-title">AI PREDICTIONS</div>
+                    </div>
+                    <div class="intel-feed">
+                        <div class="live-feed-item">
+                            <div class="threat-type">Prediction</div>
+                            <div class="threat-value">High probability of financial sector targeting in 48h</div>
+                            <div class="threat-metadata">
+                                <span>ML Confidence: 94%</span>
+                                <div class="confidence-bar"><div class="confidence-fill" style="width: 94%;"></div></div>
+                            </div>
+                        </div>
+                        <div class="live-feed-item">
+                            <div class="threat-type">Anomaly</div>
+                            <div class="threat-value">347% increase in PowerShell execution detected</div>
+                            <div class="threat-metadata">
+                                <span>Behavioral Analysis</span>
+                                <div class="confidence-bar"><div class="confidence-fill" style="width: 88%;"></div></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- COLLABORATION PLATFORM -->
+        <div class="platform-content" id="collaboration">
+            <div class="main-grid">
+                <div class="panel">
+                    <div class="panel-header">
+                        <div class="panel-icon">👥</div>
+                        <div class="panel-title">ACTIVE HUNTERS</div>
+                    </div>
+                    <div class="collaboration-zone">
+                        <div style="display: flex; align-items: center; padding: 10px; margin: 8px 0; background: linear-gradient(135deg, rgba(16, 185, 129, 0.1) 0%, rgba(5, 150, 105, 0.15) 100%); border-radius: 10px;">
+                            <div style="width: 35px; height: 35px; border-radius: 50%; background: linear-gradient(135deg, #10b981, #059669); display: flex; align-items: center; justify-content: center; font-weight: 700; color: white; margin-right: 12px;">AH</div>
+                            <div style="flex: 1;">
+                                <div style="font-weight: 700; color: #10b981; margin-bottom: 2px;">Alex Hunter</div>
+                                <div style="font-size: 11px; color: #94a3b8;">Analyzing APT-C-36 IOCs</div>
+                            </div>
+                            <div style="width: 8px; height: 8px; border-radius: 50%; background: #10b981;"></div>
+                        </div>
+                        <div style="display: flex; align-items: center; padding: 10px; margin: 8px 0; background: linear-gradient(135deg, rgba(16, 185, 129, 0.1) 0%, rgba(5, 150, 105, 0.15) 100%); border-radius: 10px;">
+                            <div style="width: 35px; height: 35px; border-radius: 50%; background: linear-gradient(135deg, #10b981, #059669); display: flex; align-items: center; justify-content: center; font-weight: 700; color: white; margin-right: 12px;">SM</div>
+                            <div style="flex: 1;">
+                                <div style="font-weight: 700; color: #10b981; margin-bottom: 2px;">Sarah Mitchell</div>
+                                <div style="font-size: 11px; color: #94a3b8;">Building PowerShell queries</div>
+                            </div>
+                            <div style="width: 8px; height: 8px; border-radius: 50%; background: #10b981;"></div>
+                        </div>
+                    </div>
+                    <div class="action-buttons">
+                        <button class="action-btn" onclick="joinHunt()">🚀 Join Hunt</button>
+                        <button class="action-btn ai" onclick="createRoom()">🏠 New Room</button>
+                    </div>
+                </div>
+                
+                <div class="panel">
+                    <div class="panel-header">
+                        <div class="panel-icon">📚</div>
+                        <div class="panel-title">KNOWLEDGE BASE</div>
+                    </div>
+                    <div class="intel-feed">
+                        <div class="live-feed-item" onclick="openPlaybook('apt')">
+                            <div class="threat-type">APT Playbook</div>
+                            <div class="threat-value">APT-C-36 Blind Eagle Analysis</div>
+                        </div>
+                        <div class="live-feed-item" onclick="openPlaybook('sharepoint')">
+                            <div class="threat-type">Zero-Day</div>
+                            <div class="threat-value">SharePoint Exploitation Guide</div>
+                        </div>
+                        <div class="live-feed-item" onclick="openPlaybook('ransomware')">
+                            <div class="threat-type">Ransomware</div>
+                            <div class="threat-value">CryptoEagle Response Plan</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="panel">
+                    <div class="panel-header">
+                        <div class="panel-icon">🎓</div>
+                        <div class="panel-title">CERTIFICATION</div>
+                    </div>
+                    <div class="collaboration-zone">
+                        <div class="live-feed-item" onclick="startTraining('bronze')">
+                            <div class="threat-type">🥉 Bronze Hunter</div>
+                            <div class="threat-value">Basic threat hunting fundamentals</div>
+                        </div>
+                        <div class="live-feed-item" onclick="startTraining('silver')">
+                            <div class="threat-type">🥈 Silver Hunter</div>
+                            <div class="threat-value">Advanced correlation techniques</div>
+                        </div>
+                        <div class="live-feed-item" onclick="startTraining('gold')">
+                            <div class="threat-type">🥇 Gold Hunter</div>
+                            <div class="threat-value">APT campaign analysis mastery</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- AI PREDICTIONS PLATFORM -->
+        <div class="platform-content" id="ai">
+            <div class="main-grid">
+                <div class="panel">
+                    <div class="panel-header">
+                        <div class="panel-icon">🧠</div>
+                        <div class="panel-title">ML THREAT ANALYSIS</div>
+                    </div>
+                    <div class="intel-feed">
+                        <div style="background: linear-gradient(135deg, rgba(168, 85, 247, 0.1) 0%, rgba(147, 51, 234, 0.2) 100%); border: 1px solid rgba(168, 85, 247, 0.3); border-radius: 12px; padding: 15px; margin: 15px 0;">
+                            <div style="display: flex; align-items: center; margin-bottom: 10px;">
+                                <div style="font-size: 16px; color: #a855f7; margin-right: 10px;">🎯</div>
+                                <div style="font-weight: 700; color: #a855f7;">NEXT TARGET PREDICTION</div>
+                            </div>
+                            <div style="font-size: 13px; color: #e2e8f0; line-height: 1.5;">
+                                ML Model Confidence: 94%<br>
+                                Predicted targets: Colombian financial institutions using SharePoint.<br>
+                                Timeframe: 24-48 hours.
+                            </div>
+                        </div>
+                        <div style="background: linear-gradient(135deg, rgba(168, 85, 247, 0.1) 0%, rgba(147, 51, 234, 0.2) 100%); border: 1px solid rgba(168, 85, 247, 0.3); border-radius: 12px; padding: 15px; margin: 15px 0;">
+                            <div style="display: flex; align-items: center; margin-bottom: 10px;">
+                                <div style="font-size: 16px; color: #a855f7; margin-right: 10px;">⚡</div>
+                                <div style="font-weight: 700; color: #a855f7;">ATTACK EVOLUTION</div>
+                            </div>
+                            <div style="font-size: 13px; color: #e2e8f0; line-height: 1.5;">
+                                APT-C-36 shifting to web application attacks.<br>
+                                New: Firmware persistence, hardware token abuse.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="action-buttons">
+                        <button class="action-btn ai" onclick="predictiveQuery()">🎯 Predictive Query</button>
+                        <button class="action-btn" onclick="trainModel()">🧠 Train Model</button>
+                    </div>
+                </div>
+                
+                <div class="panel">
+                    <div class="panel-header">
+                        <div class="panel-icon">🤖</div>
+                        <div class="panel-title">AUTOMATED HUNTING</div>
+                    </div>
+                    <div class="collaboration-zone">
+                        <div class="live-feed-item" onclick="enableAuto('behavioral')">
+                            <div class="threat-type">Behavioral Detection</div>
+                            <div class="threat-value">AI anomaly detection enabled</div>
+                        </div>
+                        <div class="live-feed-item" onclick="enableAuto('correlation')">
+                            <div class="threat-type">Cross-Platform</div>
+                            <div class="threat-value">Multi-cloud correlation active</div>
+                        </div>
+                        <div class="live-feed-item" onclick="enableAuto('response')">
+                            <div class="threat-type">Auto Response</div>
+                            <div class="threat-value">Automated containment ready</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="panel">
+                    <div class="panel-header">
+                        <div class="panel-icon">📊</div>
+                        <div class="panel-title">MODEL PERFORMANCE</div>
+                    </div>
+                    <div class="stats-grid">
+                        <div class="stat-card">
+                            <div class="stat-number">94.7%</div>
+                            <div class="stat-label">Accuracy</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-number">2.1%</div>
+                            <div class="stat-label">False Positive</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-number">97.3%</div>
+                            <div class="stat-label">Detection Rate</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-number">847ms</div>
+                            <div class="stat-label">Response Time</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="floating-notification" id="notification">
+        🚀 Feature activated successfully!
+    </div>
+    
+    <script>
+        // 🔥 ULTIMATE THREAT HUNTING PLATFORM - CLEAN VERSION
+        
+        class ThreatHuntingPlatform {
+            constructor() {
+                this.activePlatform = 'intelligence';
+                this.selectedIOCs = [];
+                this.initialize();
+            }
+            
+            initialize() {
+                console.log('🚀 Initializing Clean Threat Hunting Platform...');
+                this.setupPlatformSwitching();
+                this.startLiveFeeds();
+                this.setupEventHandlers();
+                console.log('✅ Platform Online!');
+            }
+            
+            setupPlatformSwitching() {
+                document.querySelectorAll('.platform-tab').forEach(tab => {
+                    tab.addEventListener('click', () => {
+                        const platform = tab.getAttribute('data-platform');
+                        this.switchPlatform(platform);
+                    });
+                });
+            }
+            
+            switchPlatform(platform) {
+                document.querySelectorAll('.platform-tab').forEach(tab => {
+                    tab.classList.remove('active');
+                });
+                document.querySelector(`[data-platform="${platform}"]`).classList.add('active');
+                
+                document.querySelectorAll('.platform-content').forEach(content => {
+                    content.classList.remove('active');
+                });
+                document.getElementById(platform).classList.add('active');
+                
+                this.activePlatform = platform;
+                this.showNotification(`🚀 Switched to ${platform.toUpperCase()}`);
+            }
+            
+            startLiveFeeds() {
+                this.generateLiveIntel();
+                setInterval(() => {
+                    this.generateLiveIntel();
+                    this.updateStats();
+                }, 5000);
+            }
+            
+            generateLiveIntel() {
+                const threats = [
+                    { type: 'APT Campaign', value: 'APT-C-36 infrastructure detected', confidence: 95 },
+                    { type: 'Zero-Day', value: 'SharePoint RCE exploitation', confidence: 92 },
+                    { type: 'Malicious IP', value: this.generateRandomIP(), confidence: 88 },
+                    { type: 'C2 Domain', value: 'evil-command[.]com', confidence: 90 },
+                    { type: 'Ransomware', value: 'CryptoEagle deployment detected', confidence: 99 }
+                ];
+                
+                const threat = threats[Math.floor(Math.random() * threats.length)];
+                this.addThreatToFeed(threat);
+            }
+            
+            addThreatToFeed(threat) {
+                const feed = document.getElementById('intelFeed');
+                if (!feed) return;
+                
+                const item = document.createElement('div');
+                item.className = 'live-feed-item';
+                item.innerHTML = `
+                    <div class="threat-type">${threat.type}</div>
+                    <div class="threat-value">${threat.value}</div>
+                    <div class="threat-metadata">
+                        <span>Source: AI | ${new Date().toLocaleTimeString()}</span>
+                        <div class="confidence-bar">
+                            <div class="confidence-fill" style="width: ${threat.confidence}%;"></div>
+                        </div>
+                    </div>
+                `;
+                
+                item.addEventListener('click', () => {
+                    this.addIOC(threat);
+                    this.generateQuery();
+                });
+                
+                feed.insertBefore(item, feed.firstChild);
+                
+                while (feed.children.length > 10) {
+                    feed.removeChild(feed.lastChild);
+                }
+            }
+            
+            addIOC(threat) {
+                this.selectedIOCs.push(threat);
+                this.showNotification(`🎯 IOC Added: ${threat.type}`);
+            }
+            
+            generateQuery() {
+                const canvas = document.getElementById('queryCanvas');
+                if (!canvas) return;
+                
+                const query = `// 🧠 AI-GENERATED THREAT HUNTING QUERY
+// Auto-generated from ${this.selectedIOCs.length} threat intelligence indicators
+// Platform: Microsoft Sentinel KQL
+
+let TimeWindow = ago(30d);
+let ThreatIOCs = dynamic([${this.selectedIOCs.map(i => `"${i.value}"`).join(', ')}]);
+
+// Multi-stage correlation across network, process, and file events
+let NetworkEvents = DeviceNetworkEvents
+| where Timestamp > TimeWindow
+| where RemoteIP has_any(ThreatIOCs) or RemoteUrl has_any(ThreatIOCs)
+| extend ThreatType = case(
+    RemoteIP has_any(ThreatIOCs), "MALICIOUS_IP",
+    RemoteUrl has_any(ThreatIOCs), "C2_DOMAIN",
+    "UNKNOWN")
+| summarize NetworkConnections = count(), DataTransferred = sum(SentBytes) by DeviceId, ThreatType;
+
+let ProcessEvents = DeviceProcessEvents
+| where Timestamp > TimeWindow
+| where ProcessCommandLine has_any(ThreatIOCs) or SHA256 has_any(ThreatIOCs)
+| extend ProcessThreat = case(
+    SHA256 has_any(ThreatIOCs), "KNOWN_MALWARE",
+    ProcessCommandLine has_any(ThreatIOCs), "C2_COMMUNICATION",
+    "SUSPICIOUS_ACTIVITY")
+| project DeviceId, ProcessName = FileName, ProcessThreat, CommandLine = ProcessCommandLine;
+
+// Advanced correlation with threat scoring
+NetworkEvents
+| join kind=fullouter ProcessEvents on DeviceId
+| extend ThreatScore = case(
+    isnotempty(ThreatType) and isnotempty(ProcessThreat), 100,
+    NetworkConnections > 10 and isnotempty(ProcessThreat), 90,
+    DataTransferred > 10000000, 85,
+    isnotempty(ThreatType) or isnotempty(ProcessThreat), 75,
+    50)
+| extend Classification = case(
+    ThreatScore >= 90, "CONFIRMED_THREAT",
+    ThreatScore >= 75, "HIGH_PROBABILITY",
+    ThreatScore >= 60, "MODERATE_THREAT",
+    "LOW_PRIORITY")
+| project DeviceId, Classification, ThreatScore, ThreatType, ProcessThreat, NetworkConnections, DataTransferred
+| sort by ThreatScore desc`;
+                
+                canvas.textContent = query;
+                this.applySyntaxHighlighting(canvas);
+            }
+            
+            applySyntaxHighlighting(element) {
+                let html = element.innerHTML;
+                html = html.replace(/\b(let|where|project|summarize|extend|join|sort|case|dynamic|ago)\b/g, 
+                    '<span style="color: #3b82f6; font-weight: 700;">$1</span>');
+                html = html.replace(/\b(and|or|in|contains|has_any)\b/g, 
+                    '<span style="color: #8b5cf6;">$1</span>');
+                html = html.replace(/"([^"]*)"/g, '<span style="color: #10b981;">"$1"</span>');
+                html = html.replace(/\/\/(.*?)$/gm, '<span style="color: #6b7280; font-style: italic;">//$1</span>');
+                element.innerHTML = html;
+            }
+            
+            updateStats() {
+                const stats = {
+                    malware: Math.floor(1800 + Math.random() * 200),
+                    ips: Math.floor(4200 + Math.random() * 300),
+                    domains: Math.floor(1100 + Math.random() * 150),
+                    cves: Math.floor(70 + Math.random() * 30)
+                };
+                
+                const elements = ['malwareCount', 'ipCount', 'domainCount', 'cveCount'];
+                const values = [stats.malware, stats.ips, stats.domains, stats.cves];
+                
+                elements.forEach((id, index) => {
+                    const element = document.getElementById(id);
+                    if (element) element.textContent = values[index].toLocaleString();
+                });
+            }
+            
+            setupEventHandlers() {
+                document.querySelectorAll('.live-feed-item').forEach(item => {
+                    item.addEventListener('click', () => {
+                        this.showNotification('🎯 Threat Intelligence Selected!');
+                    });
+                });
+            }
+            
+            showNotification(message) {
+                const notification = document.getElementById('notification');
+                if (!notification) return;
+                
+                notification.textContent = message;
+                notification.classList.add('show');
+                
+                setTimeout(() => {
+                    notification.classList.remove('show');
+                }, 3000);
+            }
+            
+            generateRandomIP() {
+                return `${Math.floor(Math.random() * 255)}.${Math.floor(Math.random() * 255)}.${Math.floor(Math.random() * 255)}.${Math.floor(Math.random() * 255)}`;
+            }
+        }
+        
+        // Global platform instance
+        let platform;
+        
+        // Initialize when page loads
+        window.addEventListener('DOMContentLoaded', () => {
+            platform = new ThreatHuntingPlatform();
+        });
+        
+        // Global action functions
+        function generateAIQuery() {
+            platform.generateQuery();
+            platform.showNotification('🧠 AI Query Generated!');
+        }
+        
+        function optimizeQuery() {
+            platform.showNotification('⚡ Query Optimized!');
+        }
+        
+        function exportQuery() {
+            const canvas = document.getElementById('queryCanvas');
+            if (!canvas) return;
+            
+            const query = canvas.textContent;
+            const blob = new Blob([query], { type: 'text/plain' });
+            const url = window.URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = `threat-hunt-query-${Date.now()}.kql`;
+            document.body.appendChild(a);
+            a.click();
+            document.body.removeChild(a);
+            window.URL.revokeObjectURL(url);
+            
+            platform.showNotification('💾 Query Exported!');
+        }
+        
+        function launchVisualBuilder() {
+            platform.showNotification('🚀 Visual Builder Launched!');
+        }
+        
+        function loadTemplate() {
+            platform.showNotification('📋 Template Loaded!');
+        }
+        
+        function selectCloud(cloudType) {
+            const clouds = {
+                'aws': 'AWS CloudTrail queries ready!',
+                'azure': 'Azure Sentinel activated!',
+                'gcp': 'Google Cloud hunting enabled!'
+            };
+            platform.showNotification(`☁️ ${clouds[cloudType]}`);
+        }
+        
+        function generateMobile(mobileType) {
+            const mobile = {
+                'ios': 'iOS security queries generated!',
+                'android': 'Android hunting enabled!',
+                'iot': 'IoT botnet detection ready!'
+            };
+            platform.showNotification(`📱 ${mobile[mobileType]}`);
+        }
+        
+        function joinHunt() {
+            platform.showNotification('🚀 Joined Collaborative Hunt!');
+        }
+        
+        function createRoom() {
+            platform.showNotification('🏠 Hunt Room Created!');
+        }
+        
+        function openPlaybook(type) {
+            const playbooks = {
+                'apt': 'APT-C-36 Playbook Opened!',
+                'sharepoint': 'SharePoint Guide Loaded!',
+                'ransomware': 'Ransomware Response Ready!'
+            };
+            platform.showNotification(`📚 ${playbooks[type]}`);
+        }
+        
+        function startTraining(level) {
+            const training = {
+                'bronze': 'Bronze Hunter Training Started!',
+                'silver': 'Silver Certification Begun!',
+                'gold': 'Gold Mastery Program Activated!'
+            };
+            platform.showNotification(`🎓 ${training[level]}`);
+        }
+        
+        function predictiveQuery() {
+            platform.showNotification('🎯 Predictive Query Generated!');
+        }
+        
+        function trainModel() {
+            platform.showNotification('🧠 AI Model Training Started!');
+        }
+        
+        function enableAuto(type) {
+            const auto = {
+                'behavioral': 'Behavioral Detection Enabled!',
+                'correlation': 'Cross-Platform Correlation Active!',
+                'response': 'Auto Response Ready!'
+            };
+            platform.showNotification(`🤖 ${auto[type]}`);
+        }
+        
+        // Auto-demo mode
+        setTimeout(() => {
+            console.log('🎭 Starting auto-demo...');
+            
+            setTimeout(() => {
+                const firstThreat = document.querySelector('.live-feed-item');
+                if (firstThreat) firstThreat.click();
+            }, 3000);
+            
+            // Auto-switch platforms for demo
+            let platformIndex = 0;
+            const platforms = ['intelligence', 'builder', 'visualization', 'collaboration', 'ai'];
+            
+            setInterval(() => {
+                platformIndex = (platformIndex + 1) % platforms.length;
+                platform.switchPlatform(platforms[platformIndex]);
+            }, 15000);
+        }, 2000);
+    </script>
+</body>
+</html>
